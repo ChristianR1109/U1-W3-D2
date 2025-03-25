@@ -76,150 +76,185 @@
       </h3>
     </footer>
     <script>
-      /* ESERCIZIO 1
-         Scrivi una funzione per cambiare il titolo della pagina in qualcos'altro
-      */
-      const changeTitle = function () {
-        const customTitle = document.getElementsByTagName("title")[0];
-        customTitle.innerText = "Nuovo titolo modificato";
-      };
-      const changeTitle2 = function () {
-        const customTitle2 = document.getElementsByTagName("h1")[0];
-        customTitle2.innerText = "Nuovo titolo modificato";
-      };
+            /* ESERCIZIO 1
+               Scrivi una funzione per cambiare il titolo della pagina in qualcos'altro
+            */
+            const changeTitle = function () {
+              const h1 = document.querySelector("h1");
+              const title = document.querySelector("title");
+              h1.innerText = "Altro";
+              title.innerText = "Altro";
+            };
+            /* const customTitle = document.getElementsByTagName("title")[0];
+              customTitle.innerText = "Nuovo titolo modificato";
+            };
+            const changeTitle2 = function () {
+              const customTitle2 = document.getElementsByTagName("h1")[0];
+              customTitle2.innerText = "Nuovo titolo modificato";
+            };*/
+            //changeTitle();
+            /* ESERCIZIO 2
+               Scrivi una funzione per aggiungere al titolo della pagina una classe "myHeading"
+            */
+            const addClassToTitle = function () {
+              const customTitle1 = document.getElementsByTagName("title")[0];
+              customTitle1.className = "myHeading";
+              console.dir(customTitle1);
+            };
 
-      /* ESERCIZIO 2
-         Scrivi una funzione per aggiungere al titolo della pagina una classe "myHeading"
-      */
-      const addClassToTitle = function () {
-        const customTitle1 = document.getElementsByTagName("title")[0];
-        customTitle1.className = "myHeading";
-        console.dir(customTitle1);
-      };
+            const addClassToTitle2 = function () {
+              const customTitle2 = document.getElementsByTagName("h1")[0];
+              customTitle2.className = "myHeading";
+              console.dir(customTitle2);
+            };
+            /* ESERCIZIO 3
+               Scrivi una funzione che cambi il testo dei p figli di un div
+              */
+            const changePcontent = function () {
+              const pOfDiv = document.querySelectorAll("div p");
+              console.log(pOfDiv);
+              pOfDiv.forEach((p) => (p.innerText = "Figlio di Div"));
+            };
+            changePcontent();
+            /* const divContainer = document.querySelector("div");
+              const pText = divContainer.querySelectorAll("p");
+              pText.forEach((str) => {
+                str.innerText = "Nuovo testo";
+              });
+              console.log(divContainer);
+            };
+            changePcontent();
 
-      const addClassToTitle2 = function () {
-        const customTitle2 = document.getElementsByTagName("h1")[0];
-        customTitle2.className = "myHeading";
-        console.dir(customTitle2);
-      };
-      /* ESERCIZIO 3
-         Scrivi una funzione che cambi il testo dei p figli di un div
-        */
-      const changePcontent = function () {
-        const divContainer = document.querySelector("div");
-        const pText = divContainer.querySelectorAll("p");
-        pText.forEach((str) => {
-          str.innerText = "Nuovo testo";
-        });
-        console.log(divContainer);
-      };
-      // changePcontent();
+            /* ESERCIZIO 4
+               Scrivi una funzione che cambi la proprietà href di ogni link (tranne quello nel footer) con il valore https://www.google.com
+              */
+            const changeUrls = function () {
+              const links = document.querySelectorAll("a:not(footer a)");
+              console.log(links);
+              links.forEach((a) => {
+                a.href = "https://www.google.com";
+                a.innerText = "vai a google";
+                a.target = "_blank";
+              });
+            };
+            /*  const changeHref = document.querySelectorAll("a");
+              console.log(changeHref);
+              changeHref.forEach((obj) => {
+                if (!obj.closest("footer")) {
+                  obj.href = "https://www.google.com";
+                }
+              });
+            };*/
 
-      /* ESERCIZIO 4
-         Scrivi una funzione che cambi la proprietà href di ogni link (tranne quello nel footer) con il valore https://www.google.com
-        */
-      const changeUrls = function () {
-        const changeHref = document.querySelectorAll("a");
-        console.log(changeHref);
-        changeHref.forEach((obj) => {
-          if (!obj.closest("footer")) {
-            obj.href = "https://www.google.com";
-          }
-        });
-      };
-      changeUrls();
+            changeUrls();
 
-      /* ESERCIZIO 5
-         Scrivi una funzione che aggiunga un nuovo elemento lista alla seconda lista non ordinata
-      */
-      const addToTheSecond = function () {
-        const addElement = document.createElement("li");
-        const elementLocation = document.getElementById("secondList");
-        console.log(elementLocation);
-        elementLocation.appendChild(addElement);
-      };
-      //addToTheSecond();
+            /* ESERCIZIO 5
+               Scrivi una funzione che aggiunga un nuovo elemento lista alla seconda lista non ordinata
+            */
+            const addToTheSecond = function () {
+              const addElement = document.createElement("li");
+              const elementLocation = document.getElementById("secondList");
+              console.log(elementLocation);
+              elementLocation.appendChild(addElement);
+            };
+            addToTheSecond();
 
-      /* ESERCIZIO 6
-         Scrivi una funzione che aggiunga un paragrafo al primo div
-      */
-      const addParagraph = function () {
-        const addP = document.createElement("p");
-        addP.innerText = " prova prova prova";
+            /* ESERCIZIO 6
+               Scrivi una funzione che aggiunga un paragrafo al primo div
+            */
+            const addParagraph = function () {
+              const firstDiv = document.getElementsByTagName("div");
+              //const secondDiv = document.getElementsByTagName("div:nth-of-type(2)");
+              const p = document.createElement("p");
+              p.innerText = "bho bho bho ";
+              firstDiv.appendChild(p);
+            };
+            //addParagraph();
 
-        const firstDiv = document.getElementsByTagName("div")[0];
-        firstDiv.appendChild(addP);
-      };
-      //addParagraph();
+            /* ESERCIZIO 7
+               Scrivi una funzione che faccia scomparire la prima lista non ordinata
+            */
+            const hideFirstUl = function () {
+              const toRemove = document.getElementById("firstList");
+              toRemove.remove("ul");
+            };
+            //hideFirstUl();
+            /* ESERCIZIO 8
+               Scrivi una funzione che renda verde il background di ogni lista non ordinata
+              */
+            const paintItGreen = function () {
+              const listBackground = document.querySelectorAll("ul");
+              listBackground.forEach((ul) => {
+                ul.style.backgroundColor = "green";
+              });
+            };
+            //paintItGreen();
 
-      /* ESERCIZIO 7
-         Scrivi una funzione che faccia scomparire la prima lista non ordinata
-      */
-      const hideFirstUl = function () {
-        const toRemove = document.getElementById("firstList");
-        toRemove.remove("ul");
-      };
-      //hideFirstUl();
-      /* ESERCIZIO 8
-         Scrivi una funzione che renda verde il background di ogni lista non ordinata
-        */
-      const paintItGreen = function () {
-        const listBackground = document.querySelectorAll("ul");
-        listBackground.forEach((ul) => {
-          ul.style.backgroundColor = "green";
-        });
-      };
-      //paintItGreen();
+            /* ESERCIZIO 9
+               Scrivi una funzione che rimuova l'ultima lettera dall'h1 ogni volta che l'utente lo clicca
+              */
+            const makeItClickable = function () {
+              const h1 = document.querySelector("h1");
+              h1.onclick = function () {
+                h1.innertext = h1.innerText.slice(0, -1);
+              };
+            };
+            makeItClickable();
 
-      /* ESERCIZIO 9
-         Scrivi una funzione che rimuova l'ultima lettera dall'h1 ogni volta che l'utente lo clicca
-        */
-      const makeItClickable = function () {
-        const h1CharRem = document.querySelector("h1");
-        h1CharRem.addEventListener("click", () => {
-          const text = h1CharRem.innerText;
-          text.slice(0, -1);
-        });
-      };
-      //makeItClickable();
+            /* ESERCIZIO 10
+               Crea una funzione che, al click sul footer, riveli l'URL del link interno come contenuto di un alert()
+              */
+            const revealFooterLink = function () {
 
-      /* ESERCIZIO 10
-         Crea una funzione che, al click sul footer, riveli l'URL del link interno come contenuto di un alert()
-        */
-      const revealFooterLink = function () {
-        const footerPos = document.querySelector("footer");
-        footerPos.addEventListener("click", () => {
-          const footerChange = footerPos.querySelector("a");
-          alert(footerChange.href);
-        });
-      };
+              const footer = document.querySelector("footer");
+              footer.onclick=function(){
+                const footerA = footer.querySelector("a");
+                console.log(footerA);
+                alert(footerA.href);
+              }
 
-      //revealFooterLink();
+              /* const footerPos = document.querySelector("footer");
+              footerPos.addEventListener("click", () => {
+                const footerChange = footerPos.querySelector("a");
+                alert(footerChange.href);
+              });
+            };
 
-      /* ESERCIZIO 11
-         Crea una funzione che crei una tabella nell'elemento con id "tableArea".
-         La tabella avrà 5 elementi e questa struttura: immagine, nome prodotto, quantità, prezzo
-      */
+            //revealFooterLink();
 
-      const generateTable = function () {};
+            /* ESERCIZIO 11
+               Crea una funzione che crei una tabella nell'elemento con id "tableArea".
+               La tabella avrà 5 elementi e questa struttura: immagine, nome prodotto, quantità, prezzo
+            */
 
-      /* ESERCIZIO 12
-         Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
-      */
+            const generateTable = function () {};
 
-      const addRow = function () {};
+            /* ESERCIZIO 12
+               Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
+            */
 
-      /* ESERCIZIO 14
-        Crea una funzione che nasconda le immagini della tabella quando eseguita
-      */
+            const addRow = function () {};
 
-      const hideAllImages = function () {};
+            /* ESERCIZIO 14
+              Crea una funzione che nasconda le immagini della tabella quando eseguita
+            */
 
-      /* EXTRA ESERCIZIO 15
-        Crea una funzione che cambi il colore del h2 con id "changeMyColor" con un colore random ad ogni click ricevuto
-      */
+            const hideAllImages = function () {};
 
-      const changeColorWithRandom = function () {};
+            /* EXTRA ESERCIZIO 15
+              Crea una funzione che cambi il colore del h2 con id "changeMyColor" con un colore random ad ogni click ricevuto
+            */
+
+            const changeColorWithRandom = function () {
+      const h2 = document.getElementById("changeMyColor");
+
+              const red = Math.floor(Math.random()*256)
+              const green = Math.floor(Math.random()*256)
+              const blue = Math.floor(Math.random()*256)
+              h2.style.backgroundColor= `rgb(${red} ${green} ${blue} / 100%)`;
+
+            };
+            changeColorWithRandom();
     </script>
   </body>
 </html>
